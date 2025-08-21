@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ffffff; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.SeeRewardsController">
+    <children>
+        <Label text="My Rewards">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+        <Label text="Thank you for helping others! Here are the rewards you've earned." textFill="#555555" />
+
+        <ListView fx:id="rewardsListView" prefHeight="300.0" />
+
+        <Label fx:id="statusLabel" textAlignment="CENTER">
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</VBox>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ffffff; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.SeeHotspotAreasController">
+    <children>
+        <Label text="Loss Hotspot Areas">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+        <Label text="These are the locations with the highest number of reported lost items." textFill="#555555" />
+
+        <TableView fx:id="hotspotTable" prefHeight="350.0">
+            <columns>
+                <TableColumn fx:id="locationColumn" prefWidth="400.0" text="Location" />
+                <TableColumn fx:id="countColumn" prefWidth="140.0" text="Number of Lost Items" />
+            </columns>
+        </TableView>
+
+        <Label fx:id="statusLabel" textAlignment="CENTER">
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</VBox>

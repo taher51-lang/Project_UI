@@ -18,21 +18,14 @@ import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
 
-    // This annotation links this variable to the Label with fx:id="welcomeLabel" in the FXML
     @FXML
     private Label welcomeLabel;
 
     @FXML
     private BorderPane mainPane;
 
-    /**
-     * This method runs automatically after the FXML is loaded.
-     * Because of the @FXML annotation above, 'welcomeLabel' should now be correctly linked and not null.
-     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // This line was causing the crash because welcomeLabel was null.
-        // With the FXML and this controller correctly linked, it should now work.
         if (welcomeLabel != null) {
             welcomeLabel.setText("Welcome, User " + Main.id + "!");
         } else {
@@ -40,9 +33,6 @@ public class DashboardController implements Initializable {
         }
     }
 
-    /**
-     * A helper method to load different views into the center of the dashboard.
-     */
     private void loadView(String fxmlFile) {
         try {
             Pane view = FXMLLoader.load(getClass().getResource(fxmlFile));
@@ -52,6 +42,7 @@ public class DashboardController implements Initializable {
         }
     }
 
+    // --- Main Actions ---
     @FXML
     private void handleReportLostItem(ActionEvent event) {
         loadView("/gui/ReportLostItem.fxml");
@@ -62,21 +53,39 @@ public class DashboardController implements Initializable {
         loadView("/gui/ReportFoundItem.fxml");
     }
 
+    // --- NEW: Handlers for Information & Stats ---
+
     @FXML
-    private void handleSearchItems(ActionEvent event) {
-        // loadView("/gui/SearchItems.fxml");
+    private void handleSeeRewards(ActionEvent event) {
+        System.out.println("Loading 'See My Rewards' view...");
+         loadView("/gui/SeeRewards.fxml"); // You will create this FXML file
     }
 
     @FXML
-    private void handleViewMyReports(ActionEvent event) {
-        // loadView("/gui/ViewMyReports.fxml");
+    private void handleSeeAdminResponse(ActionEvent event) {
+        System.out.println("Loading 'See Admin Responses' view...");
+        loadView("/gui/AdminResponses.fxml"); // You will create this FXML file
     }
 
     @FXML
-    private void handleItemRecovery(ActionEvent event) {
-        // loadView("/gui/ItemRecovery.fxml");
+    private void handleSeeRecoveryRate(ActionEvent event) {
+        System.out.println("Loading 'Recovery Rate' view...");
+        loadView("/gui/RecoveryRate.fxml"); // You will create this FXML file
     }
 
+    @FXML
+    private void handleSeeRecoveryTime(ActionEvent event) {
+        System.out.println("Loading 'Average Recovery Time' view...");
+        loadView("/gui/RecoveryTime.fxml"); // You will create this FXML file
+    }
+
+    @FXML
+    private void handleSeeHotspotAreas(ActionEvent event) {
+        System.out.println("Loading 'Loss Hotspots' view...");
+        loadView("/gui/HotspotAreas.fxml"); // You will create this FXML file
+    }
+
+    // --- Logout ---
     @FXML
     private void handleLogout(ActionEvent event) {
         try {

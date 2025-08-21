@@ -1,3 +1,4 @@
+Project\SeeHotspotAreasController$Hotspot.class
 Project\EntertainmentGears.class
 Project\ReportFoundItemController.class
 Project\eyeAndVision.class
@@ -7,10 +8,15 @@ Project\DashboardController.class
 Project\User$ReportLostItemController.class
 Project\Accessories.class
 Project\DoublyLinkedList.class
+Project\SeeRewardsController.class
+Project\SeeAdminResponseController.class
 Project\AcademicSupplies.class
 Project\ChildStuff.class
 Project\Item.class
 Project\Documents.class
+Project\SeeRecoveryTimeController.class
+Project\SeeHotspotAreasController.class
 Project\Bags.class
 Project\ReportLostItemController.class
 Project\Electronics.class
+Project\SeeRecoveryRateController.class

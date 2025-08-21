@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ffffff; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.SeeRecoveryTimeController">
+    <children>
+        <Label text="Average Item Recovery Time">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+        <Label text="This is the average time it takes for a lost item to be successfully recovered." textFill="#555555" />
+
+        <Label fx:id="recoveryTimeLabel" text="Calculating..." textFill="#1abc9c">
+            <font>
+                <Font name="System Bold" size="48.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="30.0" bottom="30.0" />
+            </VBox.margin>
+        </Label>
+
+        <Label fx:id="statusLabel" textAlignment="CENTER">
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</VBox>
