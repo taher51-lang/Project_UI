@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #343a40; -fx-padding: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.AdminLoginController">
+
+    <children>
+        <Label text="Admin Portal" textFill="white">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="usernameField" maxWidth="250.0" promptText="Admin Name" style="-fx-background-radius: 8;" />
+
+        <PasswordField fx:id="passwordField" maxWidth="250.0" promptText="Password" style="-fx-background-radius: 8;" />
+
+        <Button onAction="#handleAdminLoginButtonAction" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-background-radius: 8;" text="Login">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+
+        <Label fx:id="statusLabel" textAlignment="CENTER" textFill="white" wrapText="true" />
+
+        <!-- NEW HYPERLINK FOR REGISTRATION -->
+        <Hyperlink onAction="#handleRegisterLinkAction" text="Register New Admin" />
+    </children>
+</VBox>

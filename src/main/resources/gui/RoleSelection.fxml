@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" spacing="30.0" style="-fx-background-color: #f0f2f5; -fx-padding: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.RoleSelectionController">
+    <children>
+        <Label text="Welcome!">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Label>
+        <Label text="Please select your role to continue." textFill="#6b6b6b">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Button onAction="#handleUserButtonAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-background-radius: 8;" text="I am a User">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <Button onAction="#handleAdminButtonAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-background-radius: 8;" text="I am an Admin">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</VBox>

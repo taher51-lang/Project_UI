@@ -5,19 +5,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ffffff; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.SeeRecoveryTimeController">
+<!-- 1. Link the stylesheet to the root element -->
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0"
+      stylesheets="@styles.css" styleClass="root-pane"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Project.SeeRecoveryTimeController">
     <children>
-        <Label text="Average Item Recovery Time">
-            <font>
-                <Font name="System Bold" size="28.0" />
-            </font>
-        </Label>
+        <!-- 2. Apply the style class to the Label -->
+        <Label text="Average Item Recovery Time" styleClass="title-label" />
+
         <Label text="This is the average time it takes for a lost item to be successfully recovered." textFill="#555555" />
 
-        <Label fx:id="recoveryTimeLabel" text="Calculating..." textFill="#1abc9c">
-            <font>
-                <Font name="System Bold" size="48.0" />
-            </font>
+        <!-- 3. Apply the style class to the result Label -->
+        <Label fx:id="recoveryTimeLabel" text="Calculating..." styleClass="result-label">
             <VBox.margin>
                 <Insets top="30.0" bottom="30.0" />
             </VBox.margin>

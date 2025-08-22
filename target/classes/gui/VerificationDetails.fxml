@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="900.0" spacing="15.0" style="-fx-background-color: #f8f9fa; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.VerificationDetailsController">
+    <children>
+        <Label text="Verification Details">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <HBox spacing="20.0">
+            <children>
+                <!-- Lost Item Details Pane -->
+                <VBox HBox.hgrow="ALWAYS" spacing="10.0" style="-fx-border-color: #ced4da; -fx-border-radius: 5; -fx-padding: 15;">
+                    <children>
+                        <Label text="Lost Item Details">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lostUserIdLabel" text="User ID: " />
+                        <Label fx:id="lostItemIdLabel" text="Item ID: " />
+                        <Label fx:id="lostUserFlagLabel" text="User Flag: " />
+                        <Label text="Attributes:" />
+                        <TextArea fx:id="lostAttributesArea" editable="false" prefHeight="150.0" wrapText="true" />
+                        <ImageView fx:id="lostImageView" fitHeight="200.0" fitWidth="300.0" preserveRatio="true" />
+                    </children>
+                </VBox>
+                <!-- Found Item Details Pane -->
+                <VBox HBox.hgrow="ALWAYS" spacing="10.0" style="-fx-border-color: #ced4da; -fx-border-radius: 5; -fx-padding: 15;">
+                    <children>
+                        <Label text="Found Item Details">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="foundUserIdLabel" text="User ID: " />
+                        <Label fx:id="foundItemIdLabel" text="Item ID: " />
+                        <Label text="Attributes:" />
+                        <TextArea fx:id="foundAttributesArea" editable="false" prefHeight="150.0" wrapText="true" />
+                        <ImageView fx:id="foundImageView" fitHeight="200.0" fitWidth="300.0" preserveRatio="true" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" spacing="20.0">
+            <children>
+                <Button fx:id="approveButton" onAction="#handleApproveAction" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Approve Request" />
+                <Button fx:id="denyButton" onAction="#handleDenyAction" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Deny Request" />
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </HBox>
+        <Label fx:id="statusLabel" />
+    </children>
+</VBox>

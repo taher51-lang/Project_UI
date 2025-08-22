@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: #f8f9fa; -fx-padding: 30;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.AdminDashboardController">
+    <children>
+        <Label text="Admin Verification Portal">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+        <Label text="Review the pending item recovery requests below." textFill="#6c757d" />
+
+        <TableView fx:id="verificationTable" prefHeight="450.0">
+            <columns>
+                <TableColumn fx:id="lostUserIdCol" prefWidth="120.0" text="Lost User ID" />
+                <TableColumn fx:id="lostItemIdCol" prefWidth="120.0" text="Lost Item ID" />
+                <TableColumn fx:id="foundUserIdCol" prefWidth="120.0" text="Found User ID" />
+                <TableColumn fx:id="foundItemIdCol" prefWidth="120.0" text="Found Item ID" />
+                <TableColumn fx:id="actionCol" prefWidth="180.0" text="Actions" />
+            </columns>
+        </TableView>
+
+        <Label fx:id="statusLabel" textAlignment="CENTER">
+            <font>
+                <Font name="System Italic" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</VBox>

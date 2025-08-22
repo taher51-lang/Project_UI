@@ -183,7 +183,7 @@ public class ReportFoundItemController implements Initializable {
                     TextField issueAuthField = (TextField) dynamicFieldsContainer.lookup("#issueAuthorityField");
                     if (issueAuthField.getText().isEmpty()) throw new SQLException("Issuing Authority is required.");
 
-                    String docSql = "INSERT INTO Documents (id, isssueauthority) VALUES (?, ?)";
+                    String docSql = "INSERT INTO Documents (id, issueauthority) VALUES (?, ?)";
                     try (PreparedStatement ps = con.prepareStatement(docSql)) {
                         ps.setInt(1, generatedId);
                         ps.setString(2, issueAuthField.getText());

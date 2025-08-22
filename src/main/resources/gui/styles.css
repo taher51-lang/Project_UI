@@ -1,0 +1,19 @@
+/* Style for the main title label */
+.title-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* A dark blue color */
+}
+
+/* Style for the large result display */
+.result-label {
+    -fx-font-size: 52px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #16a085; /* A turquoise color */
+}
+
+/* Style for the main background of the VBox */
+.root-pane {
+    -fx-background-color: #ecf0f1; /* A light grey color */
+    -fx-padding: 30px;
+}
