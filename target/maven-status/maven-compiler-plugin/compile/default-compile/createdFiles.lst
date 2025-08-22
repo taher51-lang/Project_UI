@@ -1,6 +1,7 @@
 Project\SeeHotspotAreasController$Hotspot.class
 Project\EntertainmentGears.class
 Project\AdminRegistrationController.class
+Project\Tree.class
 Project\AdminDashboardController$VerificationRequest.class
 Project\AcademicSupplies.class
 Project\Documents.class
@@ -26,4 +27,5 @@ Project\Item.class
 Project\AdminDashboardController$1.class
 Project\SeeRecoveryTimeController.class
 Project\SeeHotspotAreasController.class
+Project\Tree$Node.class
 Project\SeeRecoveryRateController.class

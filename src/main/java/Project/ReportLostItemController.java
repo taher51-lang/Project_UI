@@ -43,6 +43,7 @@ public class ReportLostItemController implements Initializable {
                 "Identity & Documents", "Academic Supplies", "Hobby & Entertainment Gear",
                 "Children’s Belongings", "Eyewear & Vision Aids", "Keys & Access Devices"
         );
+        //Seekhna Hai!!!!!
         categoryComboBox.valueProperty().addListener((obs, oldVal, newVal) -> loadCategorySpecificFields(newVal));
     }
 
@@ -51,7 +52,9 @@ public class ReportLostItemController implements Initializable {
         if (category == null) return;
         String fxmlFile = "";
         switch (category) {
-            case "Electronics & Gadgets": fxmlFile = "/gui/fields_electronics.fxml"; break;
+            case "Electronics & Gadgets": fxmlFile = "/gui/field" +
+                    "" +
+                    "s_electronics.fxml"; break;
             case "Bags & Carriers": fxmlFile = "/gui/fields_bags.fxml"; break;
             case "Clothing & Accessories": fxmlFile = "/gui/fields_accessories.fxml"; break;
             case "Identity & Documents": fxmlFile = "/gui/fields_documents.fxml"; break;

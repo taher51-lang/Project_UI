@@ -23,6 +23,7 @@ public class User {
         con = DriverManager.getConnection(dbUrl, dbUser, dpPass);
 
         // Securely check for duplicate usernames to prevent SQL injection
+
         String checkSql = "select count(*) from user where user_name = ?";
         try (PreparedStatement checkSt = con.prepareStatement(checkSql)) {
             checkSt.setString(1, username);

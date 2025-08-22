@@ -27,7 +27,7 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (welcomeLabel != null) {
-            welcomeLabel.setText("Welcome, User " + Main.id + "!");
+            welcomeLabel.setText("Welcome, " + Main.loggedInUserName + "!");
         } else {
             System.err.println("DashboardController: welcomeLabel is null. Check FXML file for fx:id=\"welcomeLabel\".");
         }
