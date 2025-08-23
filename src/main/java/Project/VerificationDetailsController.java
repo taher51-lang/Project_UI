@@ -31,19 +31,17 @@ public class VerificationDetailsController {
 
     private AdminDashboardController.VerificationRequest request;
 
-    /**
-     * Receives the request data from the main dashboard and loads the details.
-     */
+
     public void loadRequestDetails(AdminDashboardController.VerificationRequest request) {
         this.request = request;
 
-        // Populate labels with basic info
+        // Populating labels with basic info
         lostUserIdLabel.setText("User ID: " + request.getLostUserId());
         lostItemIdLabel.setText("Item ID: " + request.getLostItemId());
         foundUserIdLabel.setText("User ID: " + request.getFoundUserId());
         foundItemIdLabel.setText("Item ID: " + request.getFoundItemId());
 
-        // Fetch detailed info from the database
+        // Fetching detailed info from the database
         fetchItemDetails(request.getLostItemId(), lostAttributesArea, lostImageView);
         fetchItemDetails(request.getFoundItemId(), foundAttributesArea, foundImageView);
         fetchUserFlag(request.getLostUserId(), lostUserFlagLabel);

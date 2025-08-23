@@ -68,9 +68,7 @@ public class LoginController {
             stage.setTitle("Sign Up");
             stage.show();
         } catch (IOException e) {
-            // CORRECTED: Removed the line that caused the NullPointerException.
-            // If loading the signup page fails, we'll just print the error
-            // instead of trying to update a label that might not exist.
+
             e.printStackTrace();
         }
     }

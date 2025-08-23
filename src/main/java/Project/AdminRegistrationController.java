@@ -33,7 +33,7 @@ public class AdminRegistrationController {
                 return;
             }
 
-            // Call the new registration method in the Main class
+            // Calling the new registration method in the Main class
             if (Main.adminRegistration(username, name, email, password, contact)) {
                 statusLabel.setText("Admin registered successfully!");
                 statusLabel.setTextFill(Color.GREEN);

@@ -10,10 +10,9 @@ import java.sql.*;
 public class User {
     static Connection con;
 
-    // This is the old method using Scanner, which is no longer needed
-    // static void registration() throws ClassNotFoundException, SQLException { ... }
 
-    // This is the new method that accepts parameters from the UI
+
+    //  the  method that accepts parameters from the UI
     static String registration(String name, String username, String pass, String mobile, String email_id) throws ClassNotFoundException, SQLException {
         String driverName = "com.mysql.cj.jdbc.Driver";
         Class.forName(driverName);
@@ -22,7 +21,6 @@ public class User {
         String dpPass = "";
         con = DriverManager.getConnection(dbUrl, dbUser, dpPass);
 
-        // Securely check for duplicate usernames to prevent SQL injection
 
         String checkSql = "select count(*) from user where user_name = ?";
         try (PreparedStatement checkSt = con.prepareStatement(checkSql)) {
@@ -34,7 +32,6 @@ public class User {
             }
         }
 
-        // Use PreparedStatement for secure insertion
         String sql = "insert into user(user_name, Name, mobileNo, email_id, user_pass) values(?, ?, ?, ?, ?)";
         try (PreparedStatement pst = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pst.setString(1, username);
@@ -77,10 +74,7 @@ public class User {
         @FXML
         private Label statusLabel;
 
-        /**
-         * Initializes the controller class. This method is automatically called
-         * after the fxml file has been loaded.
-         */
+
         @FXML
         public void initialize() {
             // Populate the category ComboBox with the item types from your console app
@@ -97,11 +91,7 @@ public class User {
             );
         }
 
-        /**
-         * This is the handler method that your FXML button calls.
-         * The @FXML annotation is crucial for linking it to the FXML file.
-         * It takes the user's input and saves it to the database.
-         */
+
         @FXML
         private void handleSubmitButtonAction(ActionEvent event) {
             // --- 1. Get User Input ---
@@ -150,9 +140,7 @@ public class User {
             }
         }
 
-        /**
-         * Helper method to clear the form fields after a successful submission.
-         */
+
         private void clearForm() {
             categoryComboBox.setValue(null);
             itemNameField.clear();

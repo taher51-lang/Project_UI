@@ -37,14 +37,14 @@ public class SeeRecoveryRateController implements Initializable {
             int totalItems = 0;
             int verifiedItems = 0;
 
-            // Execute first query to get total items
+            // Executing first query to get total items
             try (ResultSet rs1 = st1.executeQuery(totalItemsSql)) {
                 if (rs1.next()) {
                     totalItems = rs1.getInt(1);
                 }
             }
 
-            // Execute second query to get verified items
+            // Executing second query to get verified items
             try (ResultSet rs2 = st2.executeQuery(verifiedItemsSql)) {
                 if (rs2.next()) {
                     verifiedItems = rs2.getInt(1);

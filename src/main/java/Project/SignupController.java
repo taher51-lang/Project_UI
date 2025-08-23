@@ -54,7 +54,6 @@ public class SignupController {
                 statusLabel.setTextFill(Color.RED);
                 return; // Stop the registration process
             }
-            // --- End of Tree Logic ---
 
             // If username is unique, proceed with registration by calling the static method in User class
             String resultMessage = User.registration(name, username, password, contact, email);

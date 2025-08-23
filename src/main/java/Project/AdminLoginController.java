@@ -27,9 +27,7 @@ public class AdminLoginController {
     @FXML
     private Label statusLabel;
 
-    /**
-     * Handles the action when the admin login button is clicked.
-     */
+
     @FXML
     private void handleAdminLoginButtonAction(ActionEvent event) {
         String adminName = usernameField.getText();
@@ -53,10 +51,7 @@ public class AdminLoginController {
         }
     }
 
-    /**
-     * NEW: Handles the action for the 'Register New Admin' link.
-     * It prompts for a system password before proceeding.
-     */
+
     @FXML
     private void handleRegisterLinkAction(ActionEvent event) {
         TextInputDialog dialog = new TextInputDialog();
@@ -66,8 +61,7 @@ public class AdminLoginController {
 
         Optional<String> result = dialog.showAndWait();
         result.ifPresent(password -> {
-            if ("admin123".equals(password)) { // Using the system password from your console app
-                // Password is correct, switch to registration scene
+            if ("admin123".equals(password)) {
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("/gui/AdminRegistration.fxml"));
                     Stage stage = (Stage) statusLabel.getScene().getWindow();
@@ -88,11 +82,10 @@ public class AdminLoginController {
     }
 
     /**
-     * Switches the scene to the Admin Dashboard.
+     * Switching the scene to the Admin Dashboard.
      */
     private void switchToAdminDashboard(ActionEvent event) {
         try {
-            // We will need to create AdminDashboard.fxml next
             Parent dashboardRoot = FXMLLoader.load(getClass().getResource("/gui/AdminDashboard.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(dashboardRoot);

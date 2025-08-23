@@ -32,7 +32,7 @@ public class SeeHotspotAreasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Set up the columns to accept data from the Hotspot class
+        // Setting up the columns to accept data from the Hotspot class
         locationColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
         countColumn.setCellValueFactory(new PropertyValueFactory<>("count"));
         loadHotspotData();
@@ -64,10 +64,7 @@ public class SeeHotspotAreasController implements Initializable {
         hotspotTable.setItems(hotspots);
     }
 
-    /**
-     * A simple data class to hold the information for each row in the table.
-     * The property names (location, count) must match the PropertyValueFactory strings.
-     */
+
     public static class Hotspot {
         private final SimpleStringProperty location;
         private final SimpleIntegerProperty count;

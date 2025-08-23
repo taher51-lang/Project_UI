@@ -58,31 +58,31 @@ public class DashboardController implements Initializable {
     @FXML
     private void handleSeeRewards(ActionEvent event) {
         System.out.println("Loading 'See My Rewards' view...");
-         loadView("/gui/SeeRewards.fxml"); // You will create this FXML file
+         loadView("/gui/SeeRewards.fxml");
     }
 
     @FXML
     private void handleSeeAdminResponse(ActionEvent event) {
         System.out.println("Loading 'See Admin Responses' view...");
-        loadView("/gui/AdminResponses.fxml"); // You will create this FXML file
+        loadView("/gui/AdminResponses.fxml"); //
     }
 
     @FXML
     private void handleSeeRecoveryRate(ActionEvent event) {
         System.out.println("Loading 'Recovery Rate' view...");
-        loadView("/gui/RecoveryRate.fxml"); // You will create this FXML file
+        loadView("/gui/RecoveryRate.fxml"); //
     }
 
     @FXML
     private void handleSeeRecoveryTime(ActionEvent event) {
         System.out.println("Loading 'Average Recovery Time' view...");
-        loadView("/gui/RecoveryTime.fxml"); // You will create this FXML file
+        loadView("/gui/RecoveryTime.fxml"); //
     }
 
     @FXML
     private void handleSeeHotspotAreas(ActionEvent event) {
         System.out.println("Loading 'Loss Hotspots' view...");
-        loadView("/gui/HotspotAreas.fxml"); // You will create this FXML file
+        loadView("/gui/HotspotAreas.fxml"); //
     }
 
     // --- Logout ---

@@ -16,7 +16,6 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
         </columnConstraints>
 
-        <!-- The fx:id must match what the controller looks for. -->
         <Label text="Key Type:" GridPane.rowIndex="0" />
         <TextField fx:id="keyTypeField" promptText="e.g., Vehicle Key, House Key" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 

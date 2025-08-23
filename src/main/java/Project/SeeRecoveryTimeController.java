@@ -25,7 +25,7 @@ public class SeeRecoveryTimeController implements Initializable {
     }
 
     private void loadRecoveryTime() {
-        String sql = "{CALL avgRecoveryTime(?)}"; // SQL to call the stored procedure
+        String sql = "{CALL CalculateAverageRecoveryTime(?)}"; // SQL to call the stored procedure
 
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "");
              CallableStatement cs = con.prepareCall(sql)) {

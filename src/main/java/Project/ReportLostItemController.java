@@ -18,7 +18,6 @@ import java.util.HashMap;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-// NOTE: You will need to add the String Similarity library to your project (see pom.xml dependency)
 
 
 
@@ -43,7 +42,6 @@ public class ReportLostItemController implements Initializable {
                 "Identity & Documents", "Academic Supplies", "Hobby & Entertainment Gear",
                 "Children’s Belongings", "Eyewear & Vision Aids", "Keys & Access Devices"
         );
-        //Seekhna Hai!!!!!
         categoryComboBox.valueProperty().addListener((obs, oldVal, newVal) -> loadCategorySpecificFields(newVal));
     }
 
@@ -150,7 +148,7 @@ public class ReportLostItemController implements Initializable {
         }
 
         DoublyLinkedList stage1 = searchForFoundItems(con, subject);
-        if (stage1 == null || !stage1.exists()) {
+        if (!stage1.exists()) {
             statusLabel.setText("Report submitted. No potential matches found at this time.");
             return;
         }
@@ -164,7 +162,7 @@ public class ReportLostItemController implements Initializable {
         DoublyLinkedList stage3 = stage2.filterMoreAttributes(subject, subject.getClassName());
 
         if (stage3.exists()) {
-            // --- Show Payment Dialog FIRST ---
+
             TextInputDialog dialog = new TextInputDialog("250");
             dialog.setTitle("Payment Required");
             dialog.setHeaderText("Potential Match Found!");
@@ -172,14 +170,13 @@ public class ReportLostItemController implements Initializable {
 
             Optional<String> result = dialog.showAndWait();
 
-            // --- Process Payment and THEN set verification ---
             result.ifPresent(amountStr -> {
                 try {
                     int amount = Integer.parseInt(amountStr);
                     if (amount >= 250) {
-                        // --- Update User's Wallet in a new, clean transaction ---
+                        // --- Update User's Wallet in a new
+                        //
                         String updateSql = "UPDATE user SET Wallet = ? WHERE userId = ?";
-                        // Use a new try-with-resources block to manage the connection
                         try (Connection paymentCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "");
                              PreparedStatement pst = paymentCon.prepareStatement(updateSql)) {
 
@@ -187,7 +184,6 @@ public class ReportLostItemController implements Initializable {
                             pst.setInt(2, Main.id);
                             pst.executeUpdate();
 
-                            // Now that payment is confirmed, set for verification
                             stage3.setAdminVerification(lostItemId, Main.id);
                             statusLabel.setText("Match found! Payment successful. Awaiting admin verification.");
 
@@ -295,7 +291,7 @@ public class ReportLostItemController implements Initializable {
                 sqlQuery = baseSelect + "a.Brand FROM Lostandfound l JOIN accessories a ON l.id = a.id";
                 break;
             case "Main.Documents":
-                sqlQuery = baseSelect + "d.isssueauthority FROM Lostandfound l JOIN Documents d ON l.id = d.id";
+                sqlQuery = baseSelect + "d.issueauthority FROM Lostandfound l JOIN Documents d ON l.id = d.id";
                 break;
             case "Main.AcademicSupplies":
                 sqlQuery = baseSelect + "a.Brand FROM Lostandfound l JOIN AcademicSupplies a ON l.id = a.id";
